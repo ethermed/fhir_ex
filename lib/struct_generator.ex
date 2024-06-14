@@ -3,7 +3,7 @@ defmodule StructGenerator do
   Module to generate TypedStruct definitions from JSON schema.
   """
 
-  @namespace "Fhir.Generated"
+  @namespace "Fhir.v6"
 
   def generate_structs(schema) do
     schema["definitions"]
@@ -17,7 +17,8 @@ defmodule StructGenerator do
   end
 
   defp generate_struct(name, definition, all_defs) do
-    fields = definition["properties"]
+    fields =
+      definition["properties"]
       |> Enum.sort_by(fn {k, _v} -> k end, :asc)
       |> Enum.map(fn {field, field_def} ->
         {String.to_atom(field), map_type(field, field_def, all_defs)}
@@ -34,11 +35,12 @@ defmodule StructGenerator do
     """
 
     file_name = snake_case(name)
-    File.write!("lib/generated/#{file_name}.ex", struct_code)
+    File.write!("lib/v6/#{file_name}.ex", struct_code)
   end
 
   # Mapping a reference to a list of another type
   def map_type(name, def, all_defs \\ %{})
+
   def map_type(_, %{"items" => %{"$ref" => ref}}, all_defs) do
     case match_ref(ref, all_defs) do
       {:ok, type} -> "[#{type}], default: []"
@@ -84,13 +86,16 @@ defmodule StructGenerator do
         case is_root_data_type(rest) do
           true ->
             {:ok, "#{@namespace}.#{elixir_name(rest)}"}
+
           false ->
             {:ok, map_type(rest, all_defs[rest], all_defs)}
         end
+
       _ ->
         {:error, :invalid_ref}
     end
   end
+
   defp is_root_data_type(input), do: is_uppercase(input)
   defp is_uppercase(<<char, _rest::binary>>) when char in ?A..?Z, do: true
   defp is_uppercase(_), do: false

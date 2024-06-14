@@ -1,0 +1,37 @@
+defmodule Fhir.v6().CoverageEligibilityRequest do
+  use TypedStruct
+
+  typedstruct do
+    field(:_created, Fhir.v6().Element)
+    field(:_implicitRules, Fhir.v6().Element)
+    field(:_language, Fhir.v6().Element)
+    field(:_purpose, [Fhir.v6().Element], default: [])
+    field(:_servicedDate, Fhir.v6().Element)
+    field(:_status, Fhir.v6().Element)
+    field(:contained, [Fhir.v6().ResourceList], default: [])
+    field(:created, :datetime)
+    field(:enterer, Fhir.v6().Reference)
+    field(:event, [Fhir.v6().CoverageEligibilityRequestEvent], default: [])
+    field(:extension, [Fhir.v6().Extension], default: [])
+    field(:facility, Fhir.v6().Reference)
+    field(:id, :string)
+    field(:identifier, [Fhir.v6().Identifier], default: [])
+    field(:implicitRules, :string)
+    field(:insurance, [Fhir.v6().CoverageEligibilityRequestInsurance], default: [])
+    field(:insurer, Fhir.v6().Reference)
+    field(:item, [Fhir.v6().CoverageEligibilityRequestItem], default: [])
+    field(:language, :string)
+    field(:meta, Fhir.v6().Meta)
+    field(:modifierExtension, [Fhir.v6().Extension], default: [])
+    field(:patient, Fhir.v6().Reference)
+    field(:priority, Fhir.v6().CodeableConcept)
+    field(:provider, Fhir.v6().Reference)
+    field(:purpose, [:string], default: [])
+    field(:resourceType, :string, default: "CoverageEligibilityRequest")
+    field(:servicedDate, :string)
+    field(:servicedPeriod, Fhir.v6().Period)
+    field(:status, :string)
+    field(:supportingInfo, [Fhir.v6().CoverageEligibilityRequestSupportingInfo], default: [])
+    field(:text, Fhir.v6().Narrative)
+  end
+end

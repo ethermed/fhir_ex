@@ -1,0 +1,36 @@
+defmodule Fhir.v6().VerificationResult do
+  use TypedStruct
+
+  typedstruct do
+    field(:_implicitRules, Fhir.v6().Element)
+    field(:_language, Fhir.v6().Element)
+    field(:_lastPerformed, Fhir.v6().Element)
+    field(:_nextScheduled, Fhir.v6().Element)
+    field(:_status, Fhir.v6().Element)
+    field(:_statusDate, Fhir.v6().Element)
+    field(:_targetLocation, [Fhir.v6().Element], default: [])
+    field(:attestation, Fhir.v6().VerificationResultAttestation)
+    field(:contained, [Fhir.v6().ResourceList], default: [])
+    field(:extension, [Fhir.v6().Extension], default: [])
+    field(:failureAction, Fhir.v6().CodeableConcept)
+    field(:frequency, Fhir.v6().Timing)
+    field(:id, :string)
+    field(:implicitRules, :string)
+    field(:language, :string)
+    field(:lastPerformed, :datetime)
+    field(:meta, Fhir.v6().Meta)
+    field(:modifierExtension, [Fhir.v6().Extension], default: [])
+    field(:need, Fhir.v6().CodeableConcept)
+    field(:nextScheduled, :date)
+    field(:primarySource, [Fhir.v6().VerificationResultPrimarySource], default: [])
+    field(:resourceType, :string, default: "VerificationResult")
+    field(:status, :string)
+    field(:statusDate, :datetime)
+    field(:target, [Fhir.v6().Reference], default: [])
+    field(:targetLocation, [:string], default: [])
+    field(:text, Fhir.v6().Narrative)
+    field(:validationProcess, [Fhir.v6().CodeableConcept], default: [])
+    field(:validationType, Fhir.v6().CodeableConcept)
+    field(:validator, [Fhir.v6().VerificationResultValidator], default: [])
+  end
+end

@@ -1,0 +1,37 @@
+defmodule Fhir.v6().GuidanceResponse do
+  use TypedStruct
+
+  typedstruct do
+    field(:_implicitRules, Fhir.v6().Element)
+    field(:_language, Fhir.v6().Element)
+    field(:_moduleCanonical, Fhir.v6().Element)
+    field(:_moduleUri, Fhir.v6().Element)
+    field(:_occurrenceDateTime, Fhir.v6().Element)
+    field(:_status, Fhir.v6().Element)
+    field(:contained, [Fhir.v6().ResourceList], default: [])
+    field(:dataRequirement, [Fhir.v6().DataRequirement], default: [])
+    field(:encounter, Fhir.v6().Reference)
+    field(:evaluationMessage, Fhir.v6().Reference)
+    field(:extension, [Fhir.v6().Extension], default: [])
+    field(:id, :string)
+    field(:identifier, [Fhir.v6().Identifier], default: [])
+    field(:implicitRules, :string)
+    field(:language, :string)
+    field(:meta, Fhir.v6().Meta)
+    field(:modifierExtension, [Fhir.v6().Extension], default: [])
+    field(:moduleCanonical, :string)
+    field(:moduleCodeableConcept, Fhir.v6().CodeableConcept)
+    field(:moduleUri, :string)
+    field(:note, [Fhir.v6().Annotation], default: [])
+    field(:occurrenceDateTime, :datetime)
+    field(:outputParameters, Fhir.v6().Reference)
+    field(:performer, Fhir.v6().Reference)
+    field(:reason, [Fhir.v6().CodeableReference], default: [])
+    field(:requestIdentifier, Fhir.v6().Identifier)
+    field(:resourceType, :string, default: "GuidanceResponse")
+    field(:result, [Fhir.v6().Reference], default: [])
+    field(:status, :string)
+    field(:subject, Fhir.v6().Reference)
+    field(:text, Fhir.v6().Narrative)
+  end
+end

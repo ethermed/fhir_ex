@@ -1,0 +1,36 @@
+defmodule Fhir.v6().GenomicStudy do
+  use TypedStruct
+
+  typedstruct do
+    field(:_description, Fhir.v6().Element)
+    field(:_implicitRules, Fhir.v6().Element)
+    field(:_instantiatesUri, Fhir.v6().Element)
+    field(:_language, Fhir.v6().Element)
+    field(:_startDate, Fhir.v6().Element)
+    field(:_status, Fhir.v6().Element)
+    field(:analysis, [Fhir.v6().GenomicStudyAnalysis], default: [])
+    field(:basedOn, [Fhir.v6().Reference], default: [])
+    field(:contained, [Fhir.v6().ResourceList], default: [])
+    field(:description, :string)
+    field(:encounter, Fhir.v6().Reference)
+    field(:extension, [Fhir.v6().Extension], default: [])
+    field(:id, :string)
+    field(:identifier, [Fhir.v6().Identifier], default: [])
+    field(:implicitRules, :string)
+    field(:instantiatesCanonical, :string)
+    field(:instantiatesUri, :string)
+    field(:interpreter, [Fhir.v6().Reference], default: [])
+    field(:language, :string)
+    field(:meta, Fhir.v6().Meta)
+    field(:modifierExtension, [Fhir.v6().Extension], default: [])
+    field(:note, [Fhir.v6().Annotation], default: [])
+    field(:reason, [Fhir.v6().CodeableReference], default: [])
+    field(:referrer, Fhir.v6().Reference)
+    field(:resourceType, :string, default: "GenomicStudy")
+    field(:startDate, :datetime)
+    field(:status, :string)
+    field(:subject, Fhir.v6().Reference)
+    field(:text, Fhir.v6().Narrative)
+    field(:type, [Fhir.v6().CodeableConcept], default: [])
+  end
+end

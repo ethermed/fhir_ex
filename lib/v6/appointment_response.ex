@@ -1,0 +1,37 @@
+defmodule Fhir.v6().AppointmentResponse do
+  use TypedStruct
+
+  typedstruct do
+    field(:_comment, Fhir.v6().Element)
+    field(:_end, Fhir.v6().Element)
+    field(:_implicitRules, Fhir.v6().Element)
+    field(:_language, Fhir.v6().Element)
+    field(:_occurrenceDate, Fhir.v6().Element)
+    field(:_participantStatus, Fhir.v6().Element)
+    field(:_proposedNewTime, Fhir.v6().Element)
+    field(:_recurrenceId, Fhir.v6().Element)
+    field(:_recurring, Fhir.v6().Element)
+    field(:_start, Fhir.v6().Element)
+    field(:actor, Fhir.v6().Reference)
+    field(:appointment, Fhir.v6().Reference)
+    field(:comment, :string)
+    field(:contained, [Fhir.v6().ResourceList], default: [])
+    field(:end, :timestamp)
+    field(:extension, [Fhir.v6().Extension], default: [])
+    field(:id, :string)
+    field(:identifier, [Fhir.v6().Identifier], default: [])
+    field(:implicitRules, :string)
+    field(:language, :string)
+    field(:meta, Fhir.v6().Meta)
+    field(:modifierExtension, [Fhir.v6().Extension], default: [])
+    field(:occurrenceDate, :date)
+    field(:participantStatus, :string)
+    field(:participantType, [Fhir.v6().CodeableConcept], default: [])
+    field(:proposedNewTime, :boolean)
+    field(:recurrenceId, :float)
+    field(:recurring, :boolean)
+    field(:resourceType, :string, default: "AppointmentResponse")
+    field(:start, :timestamp)
+    field(:text, Fhir.v6().Narrative)
+  end
+end

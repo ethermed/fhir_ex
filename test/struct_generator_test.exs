@@ -41,16 +41,20 @@ defmodule StructGeneratorTest do
   end)
 
   test "it will follow a ref til it finds the target type" do
-      all_defs = %{
-        "code" => %{
-          "description" => "Detailed description of the type of activity; e.g. What lab test, what procedure, what kind of encounter.",
-          "$ref" => "#/definitions/CodeableConcept"
-        },
-        "priority" => %{
-          "description" => "Indicates how quickly the activity  should be addressed with respect to other requests.",
-          "$ref" => "#/definitions/code"
-        }
+    all_defs = %{
+      "code" => %{
+        "description" =>
+          "Detailed description of the type of activity; e.g. What lab test, what procedure, what kind of encounter.",
+        "$ref" => "#/definitions/CodeableConcept"
+      },
+      "priority" => %{
+        "description" =>
+          "Indicates how quickly the activity  should be addressed with respect to other requests.",
+        "$ref" => "#/definitions/code"
       }
-      assert StructGenerator.map_type("priority", all_defs["priority"], all_defs) == "Fhir.Generated.CodeableConcept"
-    end
+    }
+
+    assert StructGenerator.map_type("priority", all_defs["priority"], all_defs) ==
+             "Fhir.Generated.CodeableConcept"
+  end
 end
