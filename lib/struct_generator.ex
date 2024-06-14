@@ -3,7 +3,7 @@ defmodule StructGenerator do
   Module to generate TypedStruct definitions from JSON schema.
   """
 
-  @namespace "Fhir.v6"
+  @namespace "Fhir"
 
   def generate_structs(schema) do
     schema["definitions"]
@@ -35,7 +35,7 @@ defmodule StructGenerator do
     """
 
     file_name = snake_case(name)
-    File.write!("lib/v6/#{file_name}.ex", struct_code)
+    File.write!("lib/generated/#{file_name}.ex", struct_code)
   end
 
   # Mapping a reference to a list of another type

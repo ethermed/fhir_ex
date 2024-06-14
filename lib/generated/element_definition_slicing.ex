@@ -1,0 +1,16 @@
+defmodule Fhir.ElementDefinitionSlicing do
+  use TypedStruct
+
+  typedstruct do
+    field(:_description, Fhir.Element)
+    field(:_ordered, Fhir.Element)
+    field(:_rules, Fhir.Element)
+    field(:description, :string)
+    field(:discriminator, [Fhir.ElementDefinitionDiscriminator], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:ordered, :boolean)
+    field(:rules, any())
+  end
+end
