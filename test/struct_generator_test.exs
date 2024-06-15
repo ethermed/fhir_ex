@@ -14,7 +14,7 @@ defmodule StructGeneratorTest do
     ["instant", "NA", ":timestamp"],
     ["integer64", "NA", ":integer"],
     ["xhtml", "NA", ":string"],
-    ["id", "NA", ":string, default_apply: {Ecto.UUID, :generate, []}"]
+    ["id", "NA", ":string"]
   ]
   |> Enum.map(fn [name, def, expected] ->
     @name name
@@ -28,7 +28,7 @@ defmodule StructGeneratorTest do
 
   [
     ["NA", "#/definitions/xhtml", ":string"],
-    ["NA", "#/definitions/Extension", "Fhir.Generated.Extension"]
+    ["NA", "#/definitions/Extension", "Fhir.Extension"]
   ]
   |> Enum.map(fn [name, ref, expected] ->
     @name name
@@ -55,6 +55,6 @@ defmodule StructGeneratorTest do
     }
 
     assert StructGenerator.map_type("priority", all_defs["priority"], all_defs) ==
-             "Fhir.Generated.CodeableConcept"
+             "Fhir.CodeableConcept"
   end
 end

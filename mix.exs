@@ -25,6 +25,7 @@ defmodule Fhir.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:jason, "~> 1.2"},
       {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:typedstruct, github: "saleyn/typedstruct", tag: "0.5.3", override: true},
       {:typed_struct_ctor, "~> 0.1.1"},
       {:typed_struct_ecto_changeset, "~> 1.0.0"}
     ]

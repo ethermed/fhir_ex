@@ -8,5 +8,5 @@
   "typed_struct": {:hex, :typed_struct, "0.2.1", "e1993414c371f09ff25231393b6430bd89d780e2a499ae3b2d2b00852f593d97", [:mix], [], "hexpm", "8f5218c35ec38262f627b2c522542f1eae41f625f92649c0af701a6fab2e11b3"},
   "typed_struct_ctor": {:hex, :typed_struct_ctor, "0.1.1", "b44f83e7168045e560907e466db5499adcdababa6a2b162a88cfaaded0075792", [:mix], [{:ecto, "~> 3.10", [hex: :ecto, repo: "hexpm", optional: false]}, {:typed_struct_ecto_changeset, "~> 1.0.0", [hex: :typed_struct_ecto_changeset, repo: "hexpm", optional: false]}, {:typedstruct, "~> 0.5.2", [hex: :typedstruct, repo: "hexpm", optional: false]}], "hexpm", "b87c4f2bc9705c8dab64d18cc873cf175aa2891a126f6ffe54f51b5f1333c2da"},
   "typed_struct_ecto_changeset": {:hex, :typed_struct_ecto_changeset, "1.0.0", "40b6946074eabef74b44a6c55c79bbbcfda1abff9f82bd6fcbb738931937fa8f", [:mix], [], "hexpm", "9dccc15467402a75749907b7d07441638e92f45a2460cb068f0269d82bbc7a4e"},
-  "typedstruct": {:hex, :typedstruct, "0.5.2", "a317be3ddfd020da09e1af8418b2653449541836eb5ff23bfdc642a5a4adcc59", [:make, :mix], [], "hexpm", "f9343bc65be73a550194e509c3110be966cb005bb7cba41614f29052e5aa408d"},
+  "typedstruct": {:git, "https://github.com/saleyn/typedstruct.git", "f649974d8fa62a8b2f3780be9bc6eec07903bb8e", [tag: "0.5.3"]},
 }
