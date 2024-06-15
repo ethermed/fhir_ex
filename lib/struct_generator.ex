@@ -29,6 +29,8 @@ defmodule StructGenerator do
       use TypedStruct
 
       typedstruct do
+        plugin(TypedStructEctoChangeset)
+        plugin(TypedStructCtor)
         #{Enum.map(fields, fn {field, type} -> "field :#{field}, #{type}" end) |> Enum.join("\n        ")}
       end
     end
