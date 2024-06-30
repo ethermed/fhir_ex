@@ -74,6 +74,10 @@ defmodule StructGenerator do
   def map_type(_, %{"type" => "number"}, _), do: ":float"
   def map_type(_, %{"type" => "boolean"}, _), do: ":boolean"
 
+  def map_type(_, %{"enum" => enum_values}, _) do
+    "Ecto.Enum, values: #{inspect(Enum.map(enum_values, &String.to_atom/1))}"
+  end
+
   # constants are currently always interpretted as strings. Not sure if that's a good idea of not
   def map_type(_, %{"const" => value}, _) do
     ":string, default: \"#{value}\""

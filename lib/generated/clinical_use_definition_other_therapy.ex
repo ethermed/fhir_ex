@@ -4,10 +4,10 @@ defmodule Fhir.ClinicalUseDefinitionOtherTherapy do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :relationshipType, Fhir.CodeableConcept
-        field :treatment, Fhir.CodeableReference
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:relationshipType, Fhir.CodeableConcept)
+    field(:treatment, Fhir.CodeableReference)
   end
 end

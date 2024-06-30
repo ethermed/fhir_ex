@@ -4,11 +4,11 @@ defmodule Fhir.MedicationKnowledgeSubstitution do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_allowed, Fhir.Element
-        field :allowed, :boolean
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :type, Fhir.CodeableConcept
+    field(:_allowed, Fhir.Element)
+    field(:allowed, :boolean)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:type, Fhir.CodeableConcept)
   end
 end

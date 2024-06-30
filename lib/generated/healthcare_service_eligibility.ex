@@ -4,11 +4,11 @@ defmodule Fhir.HealthcareServiceEligibility do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_comment, Fhir.Element
-        field :code, Fhir.CodeableConcept
-        field :comment, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_comment, Fhir.Element)
+    field(:code, Fhir.CodeableConcept)
+    field(:comment, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

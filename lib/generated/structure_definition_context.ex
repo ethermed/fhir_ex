@@ -4,12 +4,12 @@ defmodule Fhir.StructureDefinitionContext do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_expression, Fhir.Element
-        field :_type, Fhir.Element
-        field :expression, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :type, :string
+    field(:_expression, Fhir.Element)
+    field(:_type, Fhir.Element)
+    field(:expression, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:type, :string)
   end
 end

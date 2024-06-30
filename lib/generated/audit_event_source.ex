@@ -4,11 +4,11 @@ defmodule Fhir.AuditEventSource do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :observer, Fhir.Reference
-        field :site, Fhir.Reference
-        field :type, [Fhir.CodeableConcept], default: []
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:observer, Fhir.Reference)
+    field(:site, Fhir.Reference)
+    field(:type, [Fhir.CodeableConcept], default: [])
   end
 end

@@ -4,10 +4,10 @@ defmodule Fhir.ContractLegal do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :contentAttachment, Fhir.Attachment
-        field :contentReference, Fhir.Reference
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:contentAttachment, Fhir.Attachment)
+    field(:contentReference, Fhir.Reference)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

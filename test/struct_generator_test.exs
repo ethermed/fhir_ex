@@ -57,4 +57,9 @@ defmodule StructGeneratorTest do
     assert StructGenerator.map_type("priority", all_defs["priority"], all_defs) ==
              "Fhir.CodeableConcept"
   end
+
+  test "it will use the Ecto.Enum type" do
+    assert StructGenerator.map_type("NA", %{"enum" => ["one", "two", "three"]}) ==
+             "Ecto.Enum, values: [:one, :two, :three]"
+  end
 end

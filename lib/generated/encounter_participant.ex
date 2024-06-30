@@ -4,11 +4,11 @@ defmodule Fhir.EncounterParticipant do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :actor, Fhir.Reference
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :period, Fhir.Period
-        field :type, [Fhir.CodeableConcept], default: []
+    field(:actor, Fhir.Reference)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:period, Fhir.Period)
+    field(:type, [Fhir.CodeableConcept], default: [])
   end
 end

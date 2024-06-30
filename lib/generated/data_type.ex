@@ -4,7 +4,7 @@ defmodule Fhir.DataType do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
   end
 end

@@ -4,11 +4,11 @@ defmodule Fhir.TestScriptScope do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :artifact, :string
-        field :conformance, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :phase, Fhir.CodeableConcept
+    field(:artifact, :string)
+    field(:conformance, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:phase, Fhir.CodeableConcept)
   end
 end

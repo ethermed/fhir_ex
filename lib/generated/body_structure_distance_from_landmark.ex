@@ -4,10 +4,10 @@ defmodule Fhir.BodyStructureDistanceFromLandmark do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :device, [Fhir.CodeableReference], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :value, [Fhir.Quantity], default: []
+    field(:device, [Fhir.CodeableReference], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:value, [Fhir.Quantity], default: [])
   end
 end

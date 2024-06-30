@@ -4,9 +4,9 @@ defmodule Fhir.Ratio do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :denominator, Fhir.Quantity
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :numerator, Fhir.Quantity
+    field(:denominator, Fhir.Quantity)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:numerator, Fhir.Quantity)
   end
 end

@@ -4,10 +4,10 @@ defmodule Fhir.PermissionJustification do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :basis, [Fhir.CodeableConcept], default: []
-        field :evidence, [Fhir.Reference], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:basis, [Fhir.CodeableConcept], default: [])
+    field(:evidence, [Fhir.Reference], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

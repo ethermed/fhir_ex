@@ -4,10 +4,10 @@ defmodule Fhir.TerminologyCapabilitiesClosure do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_translation, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :translation, :boolean
+    field(:_translation, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:translation, :boolean)
   end
 end

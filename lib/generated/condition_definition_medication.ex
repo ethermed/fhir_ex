@@ -4,10 +4,10 @@ defmodule Fhir.ConditionDefinitionMedication do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :category, Fhir.CodeableConcept
-        field :code, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:category, Fhir.CodeableConcept)
+    field(:code, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

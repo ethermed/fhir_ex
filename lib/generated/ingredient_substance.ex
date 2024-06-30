@@ -4,10 +4,10 @@ defmodule Fhir.IngredientSubstance do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :code, Fhir.CodeableReference
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :strength, [Fhir.IngredientStrength], default: []
+    field(:code, Fhir.CodeableReference)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:strength, [Fhir.IngredientStrength], default: [])
   end
 end

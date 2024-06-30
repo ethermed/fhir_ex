@@ -4,11 +4,11 @@ defmodule Fhir.CitationContributionInstance do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_time, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :time, :datetime
-        field :type, Fhir.CodeableConcept
+    field(:_time, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:time, :datetime)
+    field(:type, Fhir.CodeableConcept)
   end
 end

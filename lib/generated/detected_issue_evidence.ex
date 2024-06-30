@@ -4,10 +4,10 @@ defmodule Fhir.DetectedIssueEvidence do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :code, [Fhir.CodeableConcept], default: []
-        field :detail, [Fhir.Reference], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:code, [Fhir.CodeableConcept], default: [])
+    field(:detail, [Fhir.Reference], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

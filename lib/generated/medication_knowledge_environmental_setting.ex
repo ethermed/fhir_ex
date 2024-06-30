@@ -4,12 +4,12 @@ defmodule Fhir.MedicationKnowledgeEnvironmentalSetting do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :type, Fhir.CodeableConcept
-        field :valueCodeableConcept, Fhir.CodeableConcept
-        field :valueQuantity, Fhir.Quantity
-        field :valueRange, Fhir.Range
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:type, Fhir.CodeableConcept)
+    field(:valueCodeableConcept, Fhir.CodeableConcept)
+    field(:valueQuantity, Fhir.Quantity)
+    field(:valueRange, Fhir.Range)
   end
 end

@@ -4,10 +4,10 @@ defmodule Fhir.Narrative do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_status, Fhir.Element
-        field :div, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :status, any()
+    field(:_status, Fhir.Element)
+    field(:div, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:status, Ecto.Enum, values: [:generated, :extensions, :additional, :empty])
   end
 end

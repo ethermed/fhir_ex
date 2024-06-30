@@ -4,11 +4,11 @@ defmodule Fhir.PlanDefinitionCondition do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_kind, Fhir.Element
-        field :expression, Fhir.Expression
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :kind, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_kind, Fhir.Element)
+    field(:expression, Fhir.Expression)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:kind, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

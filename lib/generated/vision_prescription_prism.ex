@@ -4,12 +4,12 @@ defmodule Fhir.VisionPrescriptionPrism do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_amount, Fhir.Element
-        field :_base, Fhir.Element
-        field :amount, :decimal
-        field :base, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_amount, Fhir.Element)
+    field(:_base, Fhir.Element)
+    field(:amount, :decimal)
+    field(:base, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

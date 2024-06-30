@@ -4,11 +4,11 @@ defmodule Fhir.AccountCoverage do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_priority, Fhir.Element
-        field :coverage, Fhir.Reference
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :priority, :float
+    field(:_priority, Fhir.Element)
+    field(:coverage, Fhir.Reference)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:priority, :float)
   end
 end

@@ -4,11 +4,11 @@ defmodule Fhir.TestPlanAssertion do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :object, [Fhir.CodeableReference], default: []
-        field :result, [Fhir.CodeableReference], default: []
-        field :type, [Fhir.CodeableConcept], default: []
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:object, [Fhir.CodeableReference], default: [])
+    field(:result, [Fhir.CodeableReference], default: [])
+    field(:type, [Fhir.CodeableConcept], default: [])
   end
 end

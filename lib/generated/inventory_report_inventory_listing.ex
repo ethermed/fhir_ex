@@ -4,13 +4,13 @@ defmodule Fhir.InventoryReportInventoryListing do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_countingDateTime, Fhir.Element
-        field :countingDateTime, :datetime
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :item, [Fhir.InventoryReportItem], default: []
-        field :itemStatus, Fhir.CodeableConcept
-        field :location, Fhir.Reference
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_countingDateTime, Fhir.Element)
+    field(:countingDateTime, :datetime)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:item, [Fhir.InventoryReportItem], default: [])
+    field(:itemStatus, Fhir.CodeableConcept)
+    field(:location, Fhir.Reference)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

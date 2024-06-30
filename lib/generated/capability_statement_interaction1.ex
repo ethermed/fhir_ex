@@ -4,12 +4,12 @@ defmodule Fhir.CapabilityStatementInteraction1 do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_code, Fhir.Element
-        field :_documentation, Fhir.Element
-        field :code, :string
-        field :documentation, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_code, Fhir.Element)
+    field(:_documentation, Fhir.Element)
+    field(:code, :string)
+    field(:documentation, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

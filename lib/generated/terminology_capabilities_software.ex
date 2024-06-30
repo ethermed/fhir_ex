@@ -4,12 +4,12 @@ defmodule Fhir.TerminologyCapabilitiesSoftware do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_name, Fhir.Element
-        field :_version, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :name, :string
-        field :version, :string
+    field(:_name, Fhir.Element)
+    field(:_version, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:name, :string)
+    field(:version, :string)
   end
 end

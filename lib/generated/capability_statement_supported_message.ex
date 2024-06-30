@@ -4,11 +4,11 @@ defmodule Fhir.CapabilityStatementSupportedMessage do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_mode, Fhir.Element
-        field :definition, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :mode, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_mode, Fhir.Element)
+    field(:definition, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:mode, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

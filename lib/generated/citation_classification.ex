@@ -4,10 +4,10 @@ defmodule Fhir.CitationClassification do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :classifier, [Fhir.CodeableConcept], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :type, Fhir.CodeableConcept
+    field(:classifier, [Fhir.CodeableConcept], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:type, Fhir.CodeableConcept)
   end
 end

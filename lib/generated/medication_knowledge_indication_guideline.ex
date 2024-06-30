@@ -4,10 +4,10 @@ defmodule Fhir.MedicationKnowledgeIndicationGuideline do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :dosingGuideline, [Fhir.MedicationKnowledgeDosingGuideline], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :indication, [Fhir.CodeableReference], default: []
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:dosingGuideline, [Fhir.MedicationKnowledgeDosingGuideline], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:indication, [Fhir.CodeableReference], default: [])
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

@@ -4,10 +4,10 @@ defmodule Fhir.EpisodeOfCareDiagnosis do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :condition, [Fhir.CodeableReference], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :use, Fhir.CodeableConcept
+    field(:condition, [Fhir.CodeableReference], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:use, Fhir.CodeableConcept)
   end
 end

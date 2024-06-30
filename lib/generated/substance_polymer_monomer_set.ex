@@ -4,10 +4,10 @@ defmodule Fhir.SubstancePolymerMonomerSet do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :ratioType, Fhir.CodeableConcept
-        field :startingMaterial, [Fhir.SubstancePolymerStartingMaterial], default: []
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:ratioType, Fhir.CodeableConcept)
+    field(:startingMaterial, [Fhir.SubstancePolymerStartingMaterial], default: [])
   end
 end

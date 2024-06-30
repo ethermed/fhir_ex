@@ -4,10 +4,10 @@ defmodule Fhir.InsurancePlanSpecificCost do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :benefit, [Fhir.InsurancePlanBenefit1], default: []
-        field :category, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:benefit, [Fhir.InsurancePlanBenefit1], default: [])
+    field(:category, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

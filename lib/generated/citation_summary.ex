@@ -4,11 +4,11 @@ defmodule Fhir.CitationSummary do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_text, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :style, Fhir.CodeableConcept
-        field :text, :string
+    field(:_text, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:style, Fhir.CodeableConcept)
+    field(:text, :string)
   end
 end

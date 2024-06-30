@@ -4,11 +4,11 @@ defmodule Fhir.EpisodeOfCareStatusHistory do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_status, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :period, Fhir.Period
-        field :status, :string
+    field(:_status, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:period, Fhir.Period)
+    field(:status, :string)
   end
 end

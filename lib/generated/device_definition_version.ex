@@ -4,12 +4,12 @@ defmodule Fhir.DeviceDefinitionVersion do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_value, Fhir.Element
-        field :component, Fhir.Identifier
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :type, Fhir.CodeableConcept
-        field :value, :string
+    field(:_value, Fhir.Element)
+    field(:component, Fhir.Identifier)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:type, Fhir.CodeableConcept)
+    field(:value, :string)
   end
 end

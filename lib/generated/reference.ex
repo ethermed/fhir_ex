@@ -4,14 +4,14 @@ defmodule Fhir.Reference do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_display, Fhir.Element
-        field :_reference, Fhir.Element
-        field :_type, Fhir.Element
-        field :display, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :identifier, Fhir.Identifier
-        field :reference, :string
-        field :type, :string
+    field(:_display, Fhir.Element)
+    field(:_reference, Fhir.Element)
+    field(:_type, Fhir.Element)
+    field(:display, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:identifier, Fhir.Identifier)
+    field(:reference, :string)
+    field(:type, :string)
   end
 end

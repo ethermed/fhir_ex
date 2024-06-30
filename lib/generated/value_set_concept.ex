@@ -4,13 +4,13 @@ defmodule Fhir.ValueSetConcept do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_code, Fhir.Element
-        field :_display, Fhir.Element
-        field :code, :string
-        field :designation, [Fhir.ValueSetDesignation], default: []
-        field :display, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_code, Fhir.Element)
+    field(:_display, Fhir.Element)
+    field(:code, :string)
+    field(:designation, [Fhir.ValueSetDesignation], default: [])
+    field(:display, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

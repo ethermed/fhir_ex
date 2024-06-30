@@ -4,13 +4,13 @@ defmodule Fhir.SubstanceNucleicAcidSugar do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_name, Fhir.Element
-        field :_residueSite, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :identifier, Fhir.Identifier
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :name, :string
-        field :residueSite, :string
+    field(:_name, Fhir.Element)
+    field(:_residueSite, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:identifier, Fhir.Identifier)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:name, :string)
+    field(:residueSite, :string)
   end
 end

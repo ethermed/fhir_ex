@@ -4,10 +4,10 @@ defmodule Fhir.ImmunizationProgramEligibility do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :program, Fhir.CodeableConcept
-        field :programStatus, Fhir.CodeableConcept
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:program, Fhir.CodeableConcept)
+    field(:programStatus, Fhir.CodeableConcept)
   end
 end

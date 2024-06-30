@@ -4,12 +4,12 @@ defmodule Fhir.Timing do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_event, [Fhir.Element], default: []
-        field :code, Fhir.CodeableConcept
-        field :event, [:datetime], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :repeat, Fhir.TimingRepeat
+    field(:_event, [Fhir.Element], default: [])
+    field(:code, Fhir.CodeableConcept)
+    field(:event, [:datetime], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:repeat, Fhir.TimingRepeat)
   end
 end

@@ -4,10 +4,10 @@ defmodule Fhir.EvidenceReportSubject do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :characteristic, [Fhir.EvidenceReportCharacteristic], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :note, [Fhir.Annotation], default: []
+    field(:characteristic, [Fhir.EvidenceReportCharacteristic], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:note, [Fhir.Annotation], default: [])
   end
 end

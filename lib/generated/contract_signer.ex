@@ -4,11 +4,11 @@ defmodule Fhir.ContractSigner do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :party, Fhir.Reference
-        field :signature, [Fhir.Signature], default: []
-        field :type, Fhir.Coding
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:party, Fhir.Reference)
+    field(:signature, [Fhir.Signature], default: [])
+    field(:type, Fhir.Coding)
   end
 end

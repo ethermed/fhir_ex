@@ -4,13 +4,13 @@ defmodule Fhir.ProductShelfLife do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_periodString, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :periodDuration, Fhir.Duration
-        field :periodString, :string
-        field :specialPrecautionsForStorage, [Fhir.CodeableConcept], default: []
-        field :type, Fhir.CodeableConcept
+    field(:_periodString, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:periodDuration, Fhir.Duration)
+    field(:periodString, :string)
+    field(:specialPrecautionsForStorage, [Fhir.CodeableConcept], default: [])
+    field(:type, Fhir.CodeableConcept)
   end
 end

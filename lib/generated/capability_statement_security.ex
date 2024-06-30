@@ -4,13 +4,13 @@ defmodule Fhir.CapabilityStatementSecurity do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_cors, Fhir.Element
-        field :_description, Fhir.Element
-        field :cors, :boolean
-        field :description, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :service, [Fhir.CodeableConcept], default: []
+    field(:_cors, Fhir.Element)
+    field(:_description, Fhir.Element)
+    field(:cors, :boolean)
+    field(:description, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:service, [Fhir.CodeableConcept], default: [])
   end
 end

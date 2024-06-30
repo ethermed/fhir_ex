@@ -4,11 +4,11 @@ defmodule Fhir.SearchParameterComponent do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_expression, Fhir.Element
-        field :definition, :string
-        field :expression, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_expression, Fhir.Element)
+    field(:definition, :string)
+    field(:expression, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

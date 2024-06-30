@@ -4,12 +4,12 @@ defmodule Fhir.Contributor do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_name, Fhir.Element
-        field :_type, Fhir.Element
-        field :contact, [Fhir.ContactDetail], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :name, :string
-        field :type, any()
+    field(:_name, Fhir.Element)
+    field(:_type, Fhir.Element)
+    field(:contact, [Fhir.ContactDetail], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:name, :string)
+    field(:type, Ecto.Enum, values: [:author, :editor, :reviewer, :endorser])
   end
 end

@@ -4,12 +4,12 @@ defmodule Fhir.ExplanationOfBenefitAdjudication do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :amount, Fhir.Money
-        field :category, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :quantity, Fhir.Quantity
-        field :reason, Fhir.CodeableConcept
+    field(:amount, Fhir.Money)
+    field(:category, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:quantity, Fhir.Quantity)
+    field(:reason, Fhir.CodeableConcept)
   end
 end

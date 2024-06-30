@@ -4,10 +4,10 @@ defmodule Fhir.ServiceRequestOrderDetail do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :parameter, [Fhir.ServiceRequestParameter], default: []
-        field :parameterFocus, Fhir.CodeableReference
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:parameter, [Fhir.ServiceRequestParameter], default: [])
+    field(:parameterFocus, Fhir.CodeableReference)
   end
 end

@@ -4,10 +4,10 @@ defmodule Fhir.CoverageEligibilityRequestDiagnosis do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :diagnosisCodeableConcept, Fhir.CodeableConcept
-        field :diagnosisReference, Fhir.Reference
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:diagnosisCodeableConcept, Fhir.CodeableConcept)
+    field(:diagnosisReference, Fhir.Reference)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

@@ -4,10 +4,10 @@ defmodule Fhir.TestScriptAction1 do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :assert, Fhir.TestScriptAssert
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :operation, Fhir.TestScriptOperation
+    field(:assert, Fhir.TestScriptAssert)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:operation, Fhir.TestScriptOperation)
   end
 end

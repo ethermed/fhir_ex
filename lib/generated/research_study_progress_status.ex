@@ -4,12 +4,12 @@ defmodule Fhir.ResearchStudyProgressStatus do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_actual, Fhir.Element
-        field :actual, :boolean
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :period, Fhir.Period
-        field :state, Fhir.CodeableConcept
+    field(:_actual, Fhir.Element)
+    field(:actual, :boolean)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:period, Fhir.Period)
+    field(:state, Fhir.CodeableConcept)
   end
 end

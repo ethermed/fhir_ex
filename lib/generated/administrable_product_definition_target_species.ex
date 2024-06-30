@@ -4,10 +4,10 @@ defmodule Fhir.AdministrableProductDefinitionTargetSpecies do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :code, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :withdrawalPeriod, [Fhir.AdministrableProductDefinitionWithdrawalPeriod], default: []
+    field(:code, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:withdrawalPeriod, [Fhir.AdministrableProductDefinitionWithdrawalPeriod], default: [])
   end
 end

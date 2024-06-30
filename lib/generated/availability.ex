@@ -4,9 +4,9 @@ defmodule Fhir.Availability do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :availableTime, [Fhir.AvailabilityAvailableTime], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :notAvailableTime, [Fhir.AvailabilityNotAvailableTime], default: []
+    field(:availableTime, [Fhir.AvailabilityAvailableTime], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:notAvailableTime, [Fhir.AvailabilityNotAvailableTime], default: [])
   end
 end

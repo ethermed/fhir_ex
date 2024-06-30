@@ -4,10 +4,10 @@ defmodule Fhir.ExplanationOfBenefitBodySite1 do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :site, [Fhir.CodeableReference], default: []
-        field :subSite, [Fhir.CodeableConcept], default: []
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:site, [Fhir.CodeableReference], default: [])
+    field(:subSite, [Fhir.CodeableConcept], default: [])
   end
 end

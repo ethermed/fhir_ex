@@ -4,11 +4,11 @@ defmodule Fhir.ConsentPolicyBasis do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_url, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :reference, Fhir.Reference
-        field :url, :string
+    field(:_url, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:reference, Fhir.Reference)
+    field(:url, :string)
   end
 end

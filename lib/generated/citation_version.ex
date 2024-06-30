@@ -4,11 +4,11 @@ defmodule Fhir.CitationVersion do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_value, Fhir.Element
-        field :baseCitation, Fhir.Reference
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :value, :string
+    field(:_value, Fhir.Element)
+    field(:baseCitation, Fhir.Reference)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:value, :string)
   end
 end

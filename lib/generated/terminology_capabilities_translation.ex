@@ -4,10 +4,10 @@ defmodule Fhir.TerminologyCapabilitiesTranslation do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_needsMap, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :needsMap, :boolean
+    field(:_needsMap, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:needsMap, :boolean)
   end
 end

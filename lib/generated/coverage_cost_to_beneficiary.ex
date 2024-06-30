@@ -4,16 +4,16 @@ defmodule Fhir.CoverageCostToBeneficiary do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :category, Fhir.CodeableConcept
-        field :exception, [Fhir.CoverageException], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :network, Fhir.CodeableConcept
-        field :term, Fhir.CodeableConcept
-        field :type, Fhir.CodeableConcept
-        field :unit, Fhir.CodeableConcept
-        field :valueMoney, Fhir.Money
-        field :valueQuantity, Fhir.Quantity
+    field(:category, Fhir.CodeableConcept)
+    field(:exception, [Fhir.CoverageException], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:network, Fhir.CodeableConcept)
+    field(:term, Fhir.CodeableConcept)
+    field(:type, Fhir.CodeableConcept)
+    field(:unit, Fhir.CodeableConcept)
+    field(:valueMoney, Fhir.Money)
+    field(:valueQuantity, Fhir.Quantity)
   end
 end

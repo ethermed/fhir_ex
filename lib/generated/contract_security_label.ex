@@ -4,13 +4,13 @@ defmodule Fhir.ContractSecurityLabel do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_number, [Fhir.Element], default: []
-        field :category, [Fhir.Coding], default: []
-        field :classification, Fhir.Coding
-        field :control, [Fhir.Coding], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :number, [:float], default: []
+    field(:_number, [Fhir.Element], default: [])
+    field(:category, [Fhir.Coding], default: [])
+    field(:classification, Fhir.Coding)
+    field(:control, [Fhir.Coding], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:number, [:float], default: [])
   end
 end

@@ -4,11 +4,11 @@ defmodule Fhir.TestPlanTestRun do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_narrative, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :narrative, :string
-        field :script, Fhir.TestPlanScript
+    field(:_narrative, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:narrative, :string)
+    field(:script, Fhir.TestPlanScript)
   end
 end

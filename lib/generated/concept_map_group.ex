@@ -4,12 +4,12 @@ defmodule Fhir.ConceptMapGroup do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :element, [Fhir.ConceptMapElement], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :source, :string
-        field :target, :string
-        field :unmapped, Fhir.ConceptMapUnmapped
+    field(:element, [Fhir.ConceptMapElement], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:source, :string)
+    field(:target, :string)
+    field(:unmapped, Fhir.ConceptMapUnmapped)
   end
 end

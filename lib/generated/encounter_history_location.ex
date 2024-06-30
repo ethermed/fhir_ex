@@ -4,10 +4,10 @@ defmodule Fhir.EncounterHistoryLocation do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :form, Fhir.CodeableConcept
-        field :id, :string
-        field :location, Fhir.Reference
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:extension, [Fhir.Extension], default: [])
+    field(:form, Fhir.CodeableConcept)
+    field(:id, :string)
+    field(:location, Fhir.Reference)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

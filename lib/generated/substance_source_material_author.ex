@@ -4,11 +4,11 @@ defmodule Fhir.SubstanceSourceMaterialAuthor do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_authorDescription, Fhir.Element
-        field :authorDescription, :string
-        field :authorType, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_authorDescription, Fhir.Element)
+    field(:authorDescription, :string)
+    field(:authorType, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

@@ -4,9 +4,9 @@ defmodule Fhir.CodeableReference do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :concept, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :reference, Fhir.Reference
+    field(:concept, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:reference, Fhir.Reference)
   end
 end

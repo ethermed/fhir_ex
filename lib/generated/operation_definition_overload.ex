@@ -4,12 +4,12 @@ defmodule Fhir.OperationDefinitionOverload do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_comment, Fhir.Element
-        field :_parameterName, [Fhir.Element], default: []
-        field :comment, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :parameterName, [:string], default: []
+    field(:_comment, Fhir.Element)
+    field(:_parameterName, [Fhir.Element], default: [])
+    field(:comment, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:parameterName, [:string], default: [])
   end
 end

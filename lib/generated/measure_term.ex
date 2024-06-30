@@ -4,11 +4,11 @@ defmodule Fhir.MeasureTerm do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_definition, Fhir.Element
-        field :code, Fhir.CodeableConcept
-        field :definition, :string
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_definition, Fhir.Element)
+    field(:code, Fhir.CodeableConcept)
+    field(:definition, :string)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

@@ -4,9 +4,9 @@ defmodule Fhir.Range do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :high, Fhir.Quantity
-        field :id, :string
-        field :low, Fhir.Quantity
+    field(:extension, [Fhir.Extension], default: [])
+    field(:high, Fhir.Quantity)
+    field(:id, :string)
+    field(:low, Fhir.Quantity)
   end
 end

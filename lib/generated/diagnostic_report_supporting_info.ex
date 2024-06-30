@@ -4,10 +4,10 @@ defmodule Fhir.DiagnosticReportSupportingInfo do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :reference, Fhir.Reference
-        field :type, Fhir.CodeableConcept
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:reference, Fhir.Reference)
+    field(:type, Fhir.CodeableConcept)
   end
 end

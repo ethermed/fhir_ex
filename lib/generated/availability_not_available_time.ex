@@ -4,11 +4,11 @@ defmodule Fhir.AvailabilityNotAvailableTime do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_description, Fhir.Element
-        field :description, :string
-        field :during, Fhir.Period
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:_description, Fhir.Element)
+    field(:description, :string)
+    field(:during, Fhir.Period)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end

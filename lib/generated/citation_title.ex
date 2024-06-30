@@ -4,12 +4,12 @@ defmodule Fhir.CitationTitle do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_text, Fhir.Element
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :language, Fhir.CodeableConcept
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :text, :string
-        field :type, [Fhir.CodeableConcept], default: []
+    field(:_text, Fhir.Element)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:language, Fhir.CodeableConcept)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:text, :string)
+    field(:type, [Fhir.CodeableConcept], default: [])
   end
 end

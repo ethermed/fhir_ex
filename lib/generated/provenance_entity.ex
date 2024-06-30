@@ -4,12 +4,12 @@ defmodule Fhir.ProvenanceEntity do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :_role, Fhir.Element
-        field :agent, [Fhir.ProvenanceAgent], default: []
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :modifierExtension, [Fhir.Extension], default: []
-        field :role, :string
-        field :what, Fhir.Reference
+    field(:_role, Fhir.Element)
+    field(:agent, [Fhir.ProvenanceAgent], default: [])
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:modifierExtension, [Fhir.Extension], default: [])
+    field(:role, :string)
+    field(:what, Fhir.Reference)
   end
 end

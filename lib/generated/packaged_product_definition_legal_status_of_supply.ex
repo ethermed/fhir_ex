@@ -4,10 +4,10 @@ defmodule Fhir.PackagedProductDefinitionLegalStatusOfSupply do
   typedstruct do
     plugin(TypedStructEctoChangeset)
     plugin(TypedStructCtor)
-    field :code, Fhir.CodeableConcept
-        field :extension, [Fhir.Extension], default: []
-        field :id, :string
-        field :jurisdiction, Fhir.CodeableConcept
-        field :modifierExtension, [Fhir.Extension], default: []
+    field(:code, Fhir.CodeableConcept)
+    field(:extension, [Fhir.Extension], default: [])
+    field(:id, :string)
+    field(:jurisdiction, Fhir.CodeableConcept)
+    field(:modifierExtension, [Fhir.Extension], default: [])
   end
 end
