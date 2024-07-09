@@ -1,22 +1,71 @@
 defmodule Fhir.CoverageEligibilityResponseBenefit do
-  use TypedStruct
+  @moduledoc """
+  This resource provides eligibility and plan details from the processing of an CoverageEligibilityRequest resource.
+  """
+  use Ecto.Schema
+  import Ecto.Changeset
+  @derive Jason.Encoder
 
-  typedstruct do
-    plugin(TypedStructEctoChangeset)
-    plugin(TypedStructCtor)
-    field(:_allowedString, Fhir.Element)
-    field(:_allowedUnsignedInt, Fhir.Element)
-    field(:_usedString, Fhir.Element)
-    field(:_usedUnsignedInt, Fhir.Element)
-    field(:allowedMoney, Fhir.Money)
+  @primary_key false
+  embedded_schema do
     field(:allowedString, :string)
     field(:allowedUnsignedInt, :float)
-    field(:extension, [Fhir.Extension], default: [])
     field(:id, :string)
-    field(:modifierExtension, [Fhir.Extension], default: [])
-    field(:type, Fhir.CodeableConcept)
-    field(:usedMoney, Fhir.Money)
     field(:usedString, :string)
     field(:usedUnsignedInt, :float)
+    embeds_one(:_allowedString, Fhir.Element)
+    embeds_one(:_allowedUnsignedInt, Fhir.Element)
+    embeds_one(:_usedString, Fhir.Element)
+    embeds_one(:_usedUnsignedInt, Fhir.Element)
+    embeds_one(:allowedMoney, Fhir.Money)
+    embeds_many(:extension, Fhir.Extension)
+    embeds_many(:modifierExtension, Fhir.Extension)
+    embeds_one(:type, Fhir.CodeableConcept)
+    embeds_one(:usedMoney, Fhir.Money)
+  end
+
+  @type t :: %__MODULE__{
+          allowedString: String.t(),
+          allowedUnsignedInt: float(),
+          id: String.t(),
+          usedString: String.t(),
+          usedUnsignedInt: float(),
+          _allowedString: Fhir.Element.t(),
+          _allowedUnsignedInt: Fhir.Element.t(),
+          _usedString: Fhir.Element.t(),
+          _usedUnsignedInt: Fhir.Element.t(),
+          allowedMoney: Fhir.Money.t(),
+          extension: [Fhir.Extension.t()],
+          modifierExtension: [Fhir.Extension.t()],
+          type: Fhir.CodeableConcept.t(),
+          usedMoney: Fhir.Money.t()
+        }
+
+  def changeset(schema, params) do
+    schema
+    |> cast(params, [:allowedString, :allowedUnsignedInt, :id, :usedString, :usedUnsignedInt])
+    |> cast_embed(:_allowedString, with: &Fhir.Element.changeset/2)
+    |> cast_embed(:_allowedUnsignedInt, with: &Fhir.Element.changeset/2)
+    |> cast_embed(:_usedString, with: &Fhir.Element.changeset/2)
+    |> cast_embed(:_usedUnsignedInt, with: &Fhir.Element.changeset/2)
+    |> cast_embed(:allowedMoney, with: &Fhir.Money.changeset/2)
+    |> cast_embed(:extension, with: &Fhir.Extension.changeset/2)
+    |> cast_embed(:modifierExtension, with: &Fhir.Extension.changeset/2)
+    |> cast_embed(:type, with: &Fhir.CodeableConcept.changeset/2)
+    |> cast_embed(:usedMoney, with: &Fhir.Money.changeset/2)
+    |> validate_format(:id, ~r/^^[\s\S]+$$/)
+  end
+
+  def new(params) do
+    %__MODULE__{}
+    |> changeset(params)
+    |> apply_action(:new)
+  end
+
+  def new!(params) do
+    case new(params) do
+      {:ok, val} -> val
+      {:error, cs} -> raise "Invalid #{__ENV__.module}.new!(): #{inspect(cs.errors)}"
+    end
   end
 end

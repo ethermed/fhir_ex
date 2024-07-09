@@ -1,21 +1,71 @@
 defmodule Fhir.GroupCharacteristic do
-  use TypedStruct
+  @moduledoc """
+  Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively, and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
+  """
+  use Ecto.Schema
+  import Ecto.Changeset
+  @derive Jason.Encoder
 
-  typedstruct do
-    plugin(TypedStructEctoChangeset)
-    plugin(TypedStructCtor)
-    field(:_exclude, Fhir.Element)
-    field(:_valueBoolean, Fhir.Element)
-    field(:code, Fhir.CodeableConcept)
+  @primary_key false
+  embedded_schema do
     field(:exclude, :boolean)
-    field(:extension, [Fhir.Extension], default: [])
     field(:id, :string)
-    field(:modifierExtension, [Fhir.Extension], default: [])
-    field(:period, Fhir.Period)
     field(:valueBoolean, :boolean)
-    field(:valueCodeableConcept, Fhir.CodeableConcept)
-    field(:valueQuantity, Fhir.Quantity)
-    field(:valueRange, Fhir.Range)
-    field(:valueReference, Fhir.Reference)
+    embeds_one(:_exclude, Fhir.Element)
+    embeds_one(:_valueBoolean, Fhir.Element)
+    embeds_one(:code, Fhir.CodeableConcept)
+    embeds_many(:extension, Fhir.Extension)
+    embeds_many(:modifierExtension, Fhir.Extension)
+    embeds_one(:period, Fhir.Period)
+    embeds_one(:valueCodeableConcept, Fhir.CodeableConcept)
+    embeds_one(:valueQuantity, Fhir.Quantity)
+    embeds_one(:valueRange, Fhir.Range)
+    embeds_one(:valueReference, Fhir.Reference)
+  end
+
+  @type t :: %__MODULE__{
+          exclude: boolean(),
+          id: String.t(),
+          valueBoolean: boolean(),
+          _exclude: Fhir.Element.t(),
+          _valueBoolean: Fhir.Element.t(),
+          code: Fhir.CodeableConcept.t(),
+          extension: [Fhir.Extension.t()],
+          modifierExtension: [Fhir.Extension.t()],
+          period: Fhir.Period.t(),
+          valueCodeableConcept: Fhir.CodeableConcept.t(),
+          valueQuantity: Fhir.Quantity.t(),
+          valueRange: Fhir.Range.t(),
+          valueReference: Fhir.Reference.t()
+        }
+
+  def changeset(schema, params) do
+    schema
+    |> cast(params, [:exclude, :id, :valueBoolean])
+    |> cast_embed(:_exclude, with: &Fhir.Element.changeset/2)
+    |> cast_embed(:_valueBoolean, with: &Fhir.Element.changeset/2)
+    |> cast_embed(:code, with: &Fhir.CodeableConcept.changeset/2)
+    |> cast_embed(:extension, with: &Fhir.Extension.changeset/2)
+    |> cast_embed(:modifierExtension, with: &Fhir.Extension.changeset/2)
+    |> cast_embed(:period, with: &Fhir.Period.changeset/2)
+    |> cast_embed(:valueCodeableConcept, with: &Fhir.CodeableConcept.changeset/2)
+    |> cast_embed(:valueQuantity, with: &Fhir.Quantity.changeset/2)
+    |> cast_embed(:valueRange, with: &Fhir.Range.changeset/2)
+    |> cast_embed(:valueReference, with: &Fhir.Reference.changeset/2)
+    |> validate_inclusion(:exclude, [true, false])
+    |> validate_format(:id, ~r/^^[\s\S]+$$/)
+  end
+
+  def new(params) do
+    %__MODULE__{}
+    |> changeset(params)
+    |> apply_action(:new)
+  end
+
+  def new!(params) do
+    case new(params) do
+      {:ok, val} -> val
+      {:error, cs} -> raise "Invalid #{__ENV__.module}.new!(): #{inspect(cs.errors)}"
+    end
   end
 end
